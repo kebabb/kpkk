@@ -75,3 +75,6 @@ export const DEFAULT_TOKEN = {
     "USDC"
   ),
 };
+
+
+export const wsol = "So11111111111111111111111111111111111111112";

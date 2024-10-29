@@ -1,7 +1,17 @@
 import { initSdk } from "../raydium_config";
 import { wsol } from "../constants";
+import {getInfoFromDexscreener} from "../../dexscreener";
 let sdkCache = { sdk: null, expiry: 0 };
 export async function fetchAMMPoolId(tokenAddress:string) {
+  try{
+  const info = await getInfoFromDexscreener(tokenAddress);
+  const poolId = info.poolId;
+  console.log(`AMM Pool ID: ${poolId}`);
+  if(poolId !== "") return poolId;
+  }catch(e){
+    console.log("Error getting AMM pool ID using dexscreener api: ", e);
+    console.log("Trying to get AMM pool ID using raydium api");
+  }
   let raydium:any = null;
   if (sdkCache.sdk) {
     raydium = sdkCache.sdk;
@@ -73,4 +83,4 @@ export async function fetchLPToken(tokenAddress:string) {
 }
 //fetchLPToken("3XTp12PmKMHxB6YkejaGPUjMGBLKRGgzHWgJuVTsBCoP");
 
-//fetchAMMPoolId("ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82")
+fetchAMMPoolId("ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82")
