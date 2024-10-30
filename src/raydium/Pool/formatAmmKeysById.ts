@@ -16,7 +16,8 @@ const MINIMAL_MARKET_STATE_LAYOUT_V3 = struct([
   publicKey("asks"),
 ]);
 import { connection } from "../../helpers/config";
-
+import {initSdk} from "../raydium_config"
+let sdkCache = { sdk: null, expiry: 0 };
 // Promise<ApiPoolInfoV4>
 /**
  * Formats AMM keys by ID.
@@ -132,5 +133,84 @@ export async function formatAmmKeysById_pool(id:PublicKey) {
     marketEventQueue: marketInfo.eventQueue.toString(),
     lookupTableAccount: PublicKey.default.toString(),
   };
+}
+
+
+
+
+// usage of below two method:  (it's the same as above but faster and more efficient in my vps)
+//   const poolKeys: any = await formatAmmKeysById_swap_1(
+// new PublicKey(input.targetPool)
+// );
+
+// const poolInfo = await fetchPoolInfo(poolKeys, new PublicKey(input.targetPool));
+
+
+export async function formatAmmKeysById_swap_1(id: PublicKey):Promise<any> {
+  let raydium:any = null
+  if(sdkCache.sdk){
+      raydium = sdkCache.sdk;
+  }
+  else {
+      raydium = await initSdk();
+      sdkCache.sdk = raydium;
+  }
+
+  let poolKeys2 = await raydium.liquidity.getAmmPoolKeys(id.toBase58());
+  while(poolKeys2 === null || poolKeys2===undefined){poolKeys2 = await raydium.liquidity.getAmmPoolKeys(id.toBase58());}
+  if(poolKeys2.programId !== '675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8') return null;
+  return {
+    id: new PublicKey(poolKeys2.id),
+    baseMint: new PublicKey(poolKeys2.mintA.address),
+    quoteMint: new PublicKey(poolKeys2.mintB.address),
+    lpMint: new PublicKey(poolKeys2.mintLp.address),
+    baseDecimals: poolKeys2.mintA.decimals,
+    quoteDecimals: poolKeys2.mintB.decimals,
+    lpDecimals: poolKeys2.mintLp.decimals,
+    version: 4,
+    programId: new PublicKey(poolKeys2.programId),
+    authority: new PublicKey(poolKeys2.authority),
+    openOrders: new PublicKey(poolKeys2.openOrders),
+    targetOrders: new PublicKey(poolKeys2.targetOrders),
+    baseVault: new PublicKey(poolKeys2.vault.A),
+    quoteVault: new PublicKey(poolKeys2.vault.B),
+    marketVersion: 3,
+    marketProgramId: new PublicKey(poolKeys2.marketProgramId),
+    marketId: new PublicKey(poolKeys2.marketId),
+    marketAuthority: new PublicKey(poolKeys2.marketAuthority),
+    marketBaseVault: new PublicKey(poolKeys2.marketBaseVault),
+    marketQuoteVault: new PublicKey(poolKeys2.marketQuoteVault),
+    marketBids: new PublicKey(poolKeys2.marketBids),
+    marketAsks: new PublicKey(poolKeys2.marketAsks),
+    marketEventQueue: new PublicKey(poolKeys2.marketEventQueue),
+    withdrawQueue: new PublicKey("11111111111111111111111111111111"),
+    lpVault: new PublicKey("11111111111111111111111111111111"),
+    lookupTableAccount: new PublicKey("11111111111111111111111111111111")
+  }
+}
+
+export async function fetchPoolInfo(poolKeys: any, poolId: PublicKey){
+  if(poolKeys===null)return null;
+  let raydium:any = null
+  if(sdkCache.sdk){
+      raydium = sdkCache.sdk;
+  }
+  else {
+      raydium = await initSdk();
+      sdkCache.sdk = raydium;
+  }
+  
+  let rpcData = await raydium.liquidity.getRpcPoolInfo(poolId.toBase58());
+  while(rpcData === null || rpcData===undefined) {rpcData = await raydium.liquidity.getRpcPoolInfo(poolId.toBase58());}
+  return {
+    status: rpcData.status,
+    baseDecimals: rpcData.baseDecimal.toNumber(),
+    quoteDecimals: rpcData.quoteDecimal.toNumber(),
+    lpDecimals: poolKeys.lpDecimals,
+    baseReserve: rpcData.baseReserve,
+    quoteReserve: rpcData.quoteReserve,
+    lpSupply: rpcData.lpReserve,
+    startTime: rpcData.poolOpenTime
+  }
 }
 
