@@ -57,7 +57,7 @@ Utilize our local limit order and TP/SL module with zero dependencies.
 [Explore the documentation](https://github.com/outsmartchad/solana-trading-cli/blob/typescript-main/src/trading_dev/README.md)
 
 ### All commands 
-[Here](https://github.com/outsmartchad/solana-trading-cli/tree/typescript-main/src)
+[Here](https://github.com/outsmartchad/solana-trading-cli/blob/typescript-main/src/README.md)
 
 ### Open-Source Bots
 Leverage our cutting-edge, open-source trading bots:
