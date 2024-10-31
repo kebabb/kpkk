@@ -56,6 +56,9 @@ Fetch critical metrics for any liquidity pool in real-time with RPC calls:
 Utilize our local limit order and TP/SL module with zero dependencies. 
 [Explore the documentation](https://github.com/outsmartchad/solana-trading-cli/blob/typescript-main/src/trading_dev/README.md)
 
+### All commands 
+[Here](https://github.com/outsmartchad/solana-trading-cli/tree/typescript-main/src)
+
 ### Open-Source Bots
 Leverage our cutting-edge, open-source trading bots:
 
