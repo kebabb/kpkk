@@ -179,6 +179,7 @@ We appreciate your support and look forward to making our product even better wi
 
 - https://github.com/raydium-io/raydium-sdk-V2
 - https://github.com/rckprtr/pumpdotfun-sdk
+- https://github.com/rpcpool/yellowstone-grpc
 - https://github.com/Al366io/solana-transactions-wrapper
 
 ## ‼️ Disclaimer
