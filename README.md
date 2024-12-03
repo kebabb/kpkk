@@ -194,7 +194,7 @@ By using this software, you acknowledge that you have read, understood, and agre
 
 ### If you think this will steal your keys, i have no time to convince you to use it.
 
-## Plans
+## 🤖 Plans
 
 - A local-based db to store your limit orders
 
@@ -203,3 +203,13 @@ By using this software, you acknowledge that you have read, understood, and agre
 - More gRPC bots to come
 
 - More algos to trade on raydium/Pump.fun
+
+## 🪙 Final State of this repo
+
+- Best trading framework on Solana
+
+- Best package/library for trading development on solana, e.g.(we could make it easy to like Raydium.buy("token", 0.01sol, 1%slippage))
+
+- Best open-soured trading bot
+
+- Succeed with Solana dev!
