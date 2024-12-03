@@ -8,7 +8,7 @@
 - [Disclaimer](#-disclaimer)
 - [Documentation](https://outsmartchad.github.io/solana-trading-cli/)
 
-## 🚀 About
+## About
 
 **Solana Trading Client** is a free, highly efficient library designed to facilitate rapid development and deployment of custom trading strategies across multiple Solana decentralized exchanges (DEXs). It emphasizes low-latency performance, flexibility, and real-time data processing, utilizing cutting-edge infrastructure and well-established software design principles. These features ensure the following benefits:
 
@@ -24,7 +24,7 @@ The library is built with modularity and extensibility in mind, employing softwa
 
 Designed for seamless integration into existing trading systems, the Open-Source Low-Latency Trading Bot provides a robust foundation for both novice algo-traders and experienced quantitative analysts. Its open-source nature encourages community contributions and continuous improvement, ensuring the bot evolves alongside the fast-paced world of decentralized finance.
   
-## ⭐ Key Features
+## Key Features
 
 ### Token Creation and Multi-DEX Support
 Create your own Solana SPL tokens on mainnet via Pump.fun and swap tokens across multiple decentralized exchanges:
