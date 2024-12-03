@@ -204,6 +204,8 @@ By using this software, you acknowledge that you have read, understood, and agre
 
 - More algos to trade on raydium/Pump.fun
 
+- Make it more easier to install, deploy the bot using docker
+
 ## 🪙 Final State of this repo
 
 - Best trading framework on Solana
