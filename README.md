@@ -10,11 +10,11 @@
 
 ## About
 
-**Solana Trading Client** is a free, highly efficient library designed to facilitate rapid development and deployment of custom trading strategies across multiple Solana decentralized exchanges (DEXs). It emphasizes low-latency performance, flexibility, and real-time data processing, utilizing cutting-edge infrastructure and well-established software design principles. These features ensure the following benefits:
+**Solana Trading CLI** is a free, highly efficient library designed to facilitate rapid development of custom trading strategies across multiple Solana DEXs. It emphasizes low-latency performance, flexibility, and real-time data processing, utilizing cutting-edge infrastructure. These features ensure the following benefits:
 
 * **Speed:** Leverages low-latency infrastructures like Jito and BloXroute to minimize trade execution times, giving your strategies a competitive edge.
-* **Versatility:** Supports multiple DEXs, allowing for diverse trading opportunities and cross-platform arbitrage.
-* **Real-time Insights:** Fetches and processes real-time live metrics using gRPC from liquidity pools, enabling data-driven decision making.
+* **Versatility:** Supports multiple DEXs like Raydium, Orca, Meteora, and Pump.fun, allowing for diverse trading opportunities.
+* **Real-time Insights:** Fetches current state of an account using RPC, streams the latest transactions of accounts using geyser gRPC
 
 The library is built with modularity and extensibility in mind, employing software design patterns that promote:
 
