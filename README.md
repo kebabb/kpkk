@@ -190,10 +190,16 @@ This software is provided "as is", without warranty of any kind, express or impl
 
 By using this software, you acknowledge that you have read, understood, and agree to this disclaimer.
 
-### If you think this project is useful, please give us a star🌟, it will help us a lot.
-
 ### Discord channel: https://discord.gg/hFhQeBCqWX
 
-### It is a work in progress, if you have any suggestions or any problems, please let us know!
+### If you think this will steal your keys, i have no time to convince you to use it.
 
-### **_Stay tuned for the updates.🤖_**
+## Plans
+
+- A local-based db to store your limit orders
+
+- Smart scripts to help you detect potential rug pulls on pump.fun, e.g. dev sold, master wallet, similar past rug patterns
+
+- More gRPC bots to come
+
+- More algos to trade on raydium/Pump.fun
