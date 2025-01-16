@@ -131,7 +131,7 @@ Before you begin, ensure you have completed the following steps:
 4. Optional configurations:
    - Devnet wallet secret key
    - Helius RPC url + key (e.g. getting latest price from dexes)
-   - Shyft geyser gRPC token (for grpc trading bots development)
+   - Shyft geyser gRPC token (for grpc trading bots development) (Link to Shyft: https://shyft.to/)
 
 ### 2. API Keys and Wallet Setup
 
