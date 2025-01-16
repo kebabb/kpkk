@@ -2,12 +2,12 @@
 
 ### Buy token through cli
 `
-ts-node src/raydium/buy.ts --token_address <ADDRESS_TOKEN> --sol <NUMBER_OF_SOL>
+ts-node src/raydium/buy.ts --token <ADDRESS_TOKEN> --sol <NUMBER_OF_SOL>
 `
 
 ### Sell token through cli
 `
-ts-node src/raydium/sell.ts --token_address <ADDRESS_TOKEN> --percentage <SELL_PERCENTAGE>
+ts-node src/raydium/sell.ts --token <ADDRESS_TOKEN> --percentage <SELL_PERCENTAGE>
 `
 ### buy/sell token on Raydium
 ```typescript
