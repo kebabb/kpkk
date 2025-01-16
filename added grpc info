@@ -130,15 +130,15 @@ Before you begin, ensure you have completed the following steps:
 
 4. Optional configurations:
    - Devnet wallet secret key
-   - Shyft API key
+   - Helius RPC url + key (e.g. getting latest price from dexes)
+   - Shyft geyser gRPC token (for grpc trading bots development)
 
 ### 2. API Keys and Wallet Setup
 
-- **Mainnet Wallet**: Ensure you have a funded Solana mainnet wallet. The secret key is required for mainnet transactions.
-- **RPC Endpoint**: Obtain a reliable RPC endpoint for connecting to the Solana network.
-- **Jito Integration**: If using Jito, prepare your custom fee configuration.
-- **Devnet Wallet** (Optional): For testing purposes, set up a devnet wallet.
-- **Shyft API** (Optional): If you plan to use Shyft services, obtain an API key from [Shyft](https://shyft.to/).
+- **Solana Wallet**: Ensure you have a funded Solana mainnet wallet. The secret key is required for mainnet transactions.
+- **RPC Endpoint**: Obtain a RPC endpoint from reliable node operator like Helius to connect to Solana
+- **Jito Integration**: If uses Jito, prepare your custom fee configuration.
+- **Shyft Geyser gRPC** (Optional): If you are developing algo trading bot, buy a grpc token from reliable operator like Shyft.
 
 ### 3. Final Check
 
